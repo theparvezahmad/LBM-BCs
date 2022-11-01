@@ -1,0 +1,6 @@
+Runs fine for tau=0.86 u=0.085 with rhoAvg around 1.01
+Works for tau=0.72 u=0.08
+Blows for tau=0.56 u=0.085
+Blows for tau=0.56 u=0.05
+Blows for tau=0.6 u=0.001 so Re is not an issue
+Requires minimum tau to work

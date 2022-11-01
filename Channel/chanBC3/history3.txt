@@ -1,0 +1,5 @@
+Better than BC2
+Runs for tau=0.56,0.52, 0.515
+Blows for tau=0.503,0.506,0.509
+
+Above results invalid. Q_xx block was commented

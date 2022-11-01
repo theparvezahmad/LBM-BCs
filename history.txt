@@ -1,0 +1,40 @@
+Previously had a cylinder code  with Zhou-He BC.
+Want to implement Regularised BC
+
+Naming as per paper by Latt
+BC2=Zhou and He
+BC31=Reg BC(Rattan)
+BC32=Reg BC(Parvez)
+
+Last Friday: rho settled at 1.3 instead of 1
+
+Shifted to channel flow instead of flow around a cylinder to save running time
+ISSUE RESOLVED
+1)In Rattan sir's snippet, calc of ux was missing at right side(Daal mein kuch kaala tha)
+2)My and Rattan sir's formulation give almost same results for tau >=0.56
+3)Rattan sir's work till 0.55. Mine works till 0.515
+
+Shifting back to Cylinder. Not yet
+
+New problem
+Yesterday, in BC32 the Q_xx block was commented. On uncommenting the code blows.
+BC31 still works fine
+
+I am trying to match parabolic profile
+BC2 Satisfactory(0.29% error)
+BC31 Satisfactory(0.50% error in centerline velocity till 30000, 0.05% till 100000)
+
+BC32 Code blowing. For tau=0.95 u=0.01, it blows later after showing reasonable results till 15000.
+If I comment the Q_xx block, I get all plots as expected. Very interesting. An obvious omission
+is giving a correct answer.
+
+ISSUE RESOLVED
+I was missing the summation on Stress tensor. Using eq38 and eq39 not necessary for BC3
+BC3 working.(0.48% centerline vel error)
+
+Renaming BC31 as BC4 and BC32 as BC3
+SUCCESS
+BC1(Inamuro): Error 0.29%
+
+SUCCESS
+BC5(Nonlinear): Error 0.5%
